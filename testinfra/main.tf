@@ -55,6 +55,8 @@ resource "aws_instance" "Maven" {
               dnf update -y
               dnf install -y maven
               echo "<html><body><h1>Maven Installed</h1></body></html>" > /var/www/html/index.html
+              # Schedule shutdown in 45 minutes
+              shutdown -h +45
               EOF
 
   tags = {
@@ -101,6 +103,9 @@ resource "aws_instance" "Tomcat" {
     /opt/tomcat9/bin/startup.sh
 
     echo "Tomcat installation completed"
+    
+    # Schedule shutdown in 45 minutes
+    shutdown -h +45
   EOF
 
 
@@ -154,6 +159,9 @@ resource "aws_instance" "Sonarqube" {
               systemctl daemon-reload
               systemctl enable sonarqube
               systemctl start sonarqube
+              
+              # Schedule shutdown in 45 minutes
+    	      shutdown -h +45
               EOF
 
   tags = {
