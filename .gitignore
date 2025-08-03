@@ -1,0 +1,26 @@
+# Terraform local files
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# IDE/editor files
+*.log
+*.bak
+*.swp
+*.swo
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup and archive files
+*.zip
+*.tar.gz
+*.tar
+*.gz
+*.rar
+
+# Prevent large Terraform provider binaries
+*.x5

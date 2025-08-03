@@ -1,0 +1,7 @@
+aws ec2 create-key-pair \
+  --region us-east-2 \
+  --key-name fixed-terraform-key \
+  --query 'KeyMaterial' \
+  --output text > fixed-terraform-key.pem
+
+chmod 400 fixed-terraform-key.pem
