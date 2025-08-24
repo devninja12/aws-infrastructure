@@ -6,8 +6,8 @@ data "aws_vpc" "default" {
   default = true
 }
 
-resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh"
+resource "aws_security_group" "test_ssh" {
+  name        = "test_ssh"
   description = "Allow SSH inbound traffic"
   vpc_id      = data.aws_vpc.default.id
 
@@ -64,9 +64,9 @@ resource "aws_instance" "Tomcat" {
 
     echo "Installing Tomcat"
     cd /opt
-    wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.107/bin/apache-tomcat-9.0.107.zip
-    unzip apache-tomcat-9.0.107.zip
-    mv apache-tomcat-9.0.107 tomcat9
+    wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.107/bin/apache-tomcat-9.0.108.zip
+    unzip apache-tomcat-9.0.108.zip
+    mv apache-tomcat-9.0.108 tomcat9
     chmod -R 777 /opt/tomcat9
     chown -R ec2-user /opt/tomcat9
 
