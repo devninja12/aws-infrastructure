@@ -48,7 +48,7 @@ resource "aws_instance" "Tomcat" {
   ami                    = "ami-068d5d5ed1eeea07c"
   instance_type          = "t3.small"
   key_name               = "testinfra.pem"
-  vpc_security_group_ids = [aws_security_group.allow_ssh.id]
+  vpc_security_group_ids = [aws_security_group.test_ssh.id]
 
     user_data = <<-EOF
     #!/bin/bash
